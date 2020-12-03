@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        td,th {
+            width: 25%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <h1>Example shopping cart</h1>
+
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+            </tr>
+            <tr>
+                <td>{{name}}</td>
+                <td>${{unitPrice}}</td>
+                <td>
+<!--                    remember v-model automatically connects the placeholder to the data-->
+                    <input type="number" id="quantity" v-model="quantity">
+                </td>
+                <td>{{totalPrice | decimalPlace(2)}}</td>
+            </tr>
+        </table>
+    </div>
+
+<script>
+
+    let app = new Vue({
+        el:'#app',
+        data: {
+            name: 'Hat',
+            unitPrice: 10.99,
+            quantity:1,
+        },
+        // computed: {
+        //     totalPrice: function (){
+        //         if (this.quantity >0){
+        //             let total = this.unitPrice * this.quantity
+        //             return total
+        //         } else {
+        //             alert('Only real numbers')
+        //             this.quantity = 1
+        //         }
+        //     }
+        // },
+        // filters: {
+        //     decimalPlace: function (price, decimcal){
+        //         let formatPrice = price.toFixed(decimcal)
+        //         return formatPrice
+        //     }
+        // }
+    })
+</script>
+
+</body>
+</html>

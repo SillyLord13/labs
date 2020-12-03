@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="47aa2e71-a7a3-471a-9f2b-719c162fbbae" name="Default Changelist" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Slides code/week-9/starter/student/student_sign_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Slides code/week-9/starter/student/student_sign_in.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Slides code/week-9/starter/student/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Slides code/week-9/starter/student/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Slides code/week-9/starter/tracker/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Slides code/week-9/starter/tracker/activity.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jU0Pab58E2imQlJdd9PonC1tWq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Slides code" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Issue.Navigation" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="47aa2e71-a7a3-471a-9f2b-719c162fbbae" name="Default Changelist" comment="" />
+      <created>1603843339972</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603843339972</updated>
+      <workItem from="1603843341037" duration="1571000" />
+      <workItem from="1606244132765" duration="4491000" />
+      <workItem from="1606253303674" duration="8462000" />
+      <workItem from="1606269140847" duration="6791000" />
+      <workItem from="1606429413977" duration="209000" />
+      <workItem from="1606502523518" duration="10650000" />
+      <workItem from="1606517797442" duration="573000" />
+      <workItem from="1606603385126" duration="244000" />
+    </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1606603489910</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606603489910</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/week-6/world capital quiz" />
+      <path value="$PROJECT_DIR$/week-6/world capital quiz/capital_city_base" />
+    </ignored-roots>
+    <MESSAGE value="caught up" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="375" y="97" width="1258" height="826" key="CommitChangelistDialog2" timestamp="1606603489167">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="375" y="97" width="1258" height="826" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606603489167" />
+    <state x="569" y="384" key="FileChooserDialogImpl" timestamp="1606603566303">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2240" y="695" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1080.1880@1920.0.1080.1880" timestamp="1603845023894" />
+    <state x="569" y="384" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606603566303" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1606603620022">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606603620022" />
+    <state x="417" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606603537723">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="417" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606603537723" />
+    <state x="1920" y="0" width="1498" height="704" key="dock-window-1" timestamp="1606603412003">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1920" y="0" width="1498" height="704" key="dock-window-1/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606603412003" />
+    <state x="1913" y="0" width="974" height="1047" key="dock-window-1/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1606411971299" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606514990754">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606514990754" />
+  </component>
+</project>

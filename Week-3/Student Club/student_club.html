@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Club Membership</title>
+
+    <style>
+
+        .selected {
+            text-decoration: line-through ;
+            font-style: italic;
+            color: gray;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 5px 5px 0px;
+            box-sizing: border-box;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1>Student Club Roster</h1>
+
+<h2>Add Students</h2>
+
+<label for="student-name">Student Name</label><input id="student-name" name="student-name">
+<br>
+<label for="student-id">Student ID</label><input id="student-id" name="student-id">
+<br>
+<label for="student-gpa">Student GPA</label><input id="student-gpa" name="student-gpa" type="number">
+<br>
+<button id="add-student">Add Student</button>
+
+<h2>Student List</h2>
+
+<p>There are
+    <span id="student-count">
+          <!-- use JavaScript to count the number of students, and show here -->
+        </span>
+    student(s) in the club.</p>
+
+
+<ul id="student-list">
+    <!-- use JavaScript to create li elements  -->
+</ul>
+
+<button id="remove-selected-students">Remove selected students</button>
+
+<script>
+
+    /* Add the following functionality to this page
+    When the page loads
+        - Add a click event handler to each li element.
+            When a li element is clicked, add the class="selected" to that li element.
+            When a li element is clicked again, remove the class="selected" from that li element
+        - Add the new li element to ul#student-list element
+        - Update the span#student-count value to the new number of students
+    When button#remove-selected-students is clicked,
+        - remove all of the elements with the class="selected" from the list.
+
+    */
+
+    //set student count to display automatically as 0
+    let studentCount = document.querySelector('#student-count')
+    studentCount.innerHTML = 0
+
+
+    let nameInput = document.querySelector('#student-name')
+    let idInput = document.querySelector('#student-id')
+    let gpaInput = document.querySelector('#student-gpa')
+
+    let studentList =document.querySelector('#student-list')
+
+    let addbutton = document. querySelector('#add-student')
+
+    let removeButton = document.querySelector('#remove-selected-students')
+
+    addbutton.addEventListener('click', function (){
+
+        //grab values from text input and change to variables to use
+        let nameText = nameInput.value
+        let idText = idInput.value
+        let gpaText = gpaInput.value
+
+        // check that the input values meet the criteria
+        if (!nameText || !idText|| !gpaText ||gpaText < 0 || gpaText > 4){
+            alert('Unauthorized input. Please Enter Student Name, Student ID, and Valid GPA.')
+        }
+
+        //drop variables into template string to be added to the roster
+        let studentListItem = `${nameText}, ID: ${idText}, GPA:${gpaText}`
+
+        // add string template to list and display
+        let newListItem = document.createElement('li')
+        newListItem.classList.add('unselected')
+        newListItem.innerHTML = studentListItem
+        studentList.appendChild(newListItem)
+
+        //display new number of students added to roster
+        studentCount.innerHTML = studentCount + 1
+
+        //could be a loop
+        //clear input and prepare to receive next set
+        nameInput.value = ''
+        idInput.value = ''
+        gpaInput.value = ''
+    })
+
+    //set up to get all li items
+    let selectItem = document.getElementsByTagName('li')
+
+    //change student element class from unselected to selected when clicked
+    selectItem.addEventListener('click', function (){
+        selectItem.classList.toggle('selected')
+    })
+
+    //remove all selected students when remove button is clicked
+    removeButton.addEventListener('click', function (){
+        let deleteStudents = document.querySelectorAll()
+        deleteStudents.forEach(function (student) {
+            student.remove()
+        })
+    })
+</script>
+
+</body>
+</html>

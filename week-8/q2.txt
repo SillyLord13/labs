@@ -1,0 +1,9 @@
+Q2 answer:
+
+The vue warning means that there's a vue variable in the
+html that has not beein properly attached in the model.
+Depending on the function of the variable, it either
+needs a function or data attached to it in the vue model.
+While the error may not affect the page at first, it's
+best to go and correct it immidately. It will affect how
+the javascript shows up on the page.

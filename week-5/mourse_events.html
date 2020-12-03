@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mouse over events</title>
+</head>
+<body>
+
+    <p>click the mouse on the canvas</p>
+    <label for="color-select">Select a color: </label><input id="color-select" type="color">
+    <label for="size-select">Select circle size:</label><input id="size-select" type="range">
+    <br/>
+    <canvas id="canvas" height="420" width="420"></canvas>
+    <button>Clear</button>
+
+
+
+
+<script>
+    //establish canvas element
+    let canvas = document.getElementById("canvas")
+    let context = canvas.getContext("2d")
+
+    //get color and size element from input
+    let color = document.getElementById("color-select")
+    let size = document.getElementById("size-select")
+
+    //recognize clear button
+    let clear = document.querySelector('button')
+
+    canvas.addEventListener("click", function drawSquare(){
+
+        //get x,y location of mouse click event
+        let x = event.offsetX
+        let y = event.offsetY
+
+        //get color and size value from inputs
+        let fillColor = color.value
+        let circleSize = size.value
+
+        //draw circles
+        context.beginPath()
+        context.fillStyle = fillColor
+        context.arc(x-5,y-5,circleSize,10,Math.PI)
+        context.fill()
+    })
+
+
+    clear.addEventListener('click', function clearCanvas(){
+        //clear the canvas
+        context.clearRect(0,0,420,420)
+    })
+
+</script>
+
+</body>
+</html>

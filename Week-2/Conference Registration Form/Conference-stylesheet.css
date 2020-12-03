@@ -1,0 +1,42 @@
+.header img{
+    float: left;
+    width: 102px;
+    height: 102px;
+}
+
+.header h4{
+    position: relative;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#reg-desc{
+    padding-top: 40px;
+}
+
+body{
+    background-color: #333333;
+    color: whitesmoke;
+}
+
+form{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    margin: 5px;
+    padding: 10px;
+    border: black solid 3px;
+    border-radius: 15px;
+}
+
+.jumbotron{
+    background: url("images/pentagram-sized.png") top center;
+    height: 205px;
+    image-rendering: auto;
+    text-align: center;
+    color: whitesmoke;
+    font-family:  "Palatino Linotype";
+    border-bottom: gray solid 5px;
+
+
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Practice Tracker</title>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+    <div id="app">
+
+
+        <h1 class="text-center">{{activity}} Time Tracker</h1>
+
+        <div id="add-hours" class="card">
+
+            <h2 class="card-header">Add Records</h2>
+            <div class="card-body">
+
+                <div class="alert alert-danger"
+                     v-show="errors.length > 0">
+                    <ul>
+                        <li v-for="error in errors"
+                            v-bind:key="error"> {{error}}</li>
+                    </ul>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="date">What date did you {{activity | lowerCase}}? </label>
+                    <input id="date"
+                           class="form-control"
+                           type="date"
+                           v-model="dateString">
+                    <small id="date-help" class="form-text text-muted">
+                        Date must be today or in the past.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="hours">How many hours did you practice for?</label>
+                    <input id="hours"
+                           class="form-control"
+                           type="number"
+                           v-model.number="hours"
+                           min="0" max="24">
+                    <small id="hours-help" class="form-text text-muted">
+                        Enter a number of hours, more than 0, up to a maximum of 24
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="actType">What type?</label>
+                    <select class="form-control"
+                            v-model="type">
+                        <option v-for="actType in types" id="actType">{{actType}}</option>
+                    </select>
+                </div>
+
+                <div class="form-label pb-2">
+                    What media?
+                </div>
+<!--When working with radio buttons in vue, v-model all the radio buttons to what the buttons will choose-->
+<!-- and then bind the individual buttons to what ever data type they're representing in vue-->
+                <div class="form-check-inline">
+                    <input id="media1"
+                           class="form-check-input"
+                           type="radio"
+                           v-bind:value="media.digital"
+                           v-model="medium">
+                    <label class="form-check-label" for="media1"> {{media.digital}}  </label>
+                </div>
+
+                <div class="form-check-inline">
+                    <input id="media2"
+                           class="form-check-input"
+                           type="radio"
+                           v-bind:value="media.traditional"
+                           v-model="medium">
+                    <label class="form-check-label" for="media2"> {{media.traditional}} </label>
+                </div>
+
+                <div class="form-group ">
+                    <input id="complete"
+                           type="checkbox"
+                           v-model="complete" >
+                    <label class="form-check-label" for="complete">Complete?</label>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"  for="notes" >Notes:</label>
+                    <textarea class="form-control"
+                              id="notes"
+                              rows="3"
+                              size="small"
+                              placeholder="Records will only display first 40 characters. Don't worry all your notes will be saved."
+                              v-model="notes">
+                    </textarea>
+                </div>
+
+                <div>
+                    <button class="btn btn-primary mt-2"
+                            type="button"
+                            v-on:click="submit">Add record</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-header">Activity Records</h2>
+
+            <div class="card-body">
+
+                <h3> {{totalRecords}}</h3>
+
+                <div id="records">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Date</th>
+                            <th>How many hours?</th>
+                            <th>Type</th>
+                            <th>Media</th>
+                            <th>Completed?</th>
+                            <th>Notes</th>
+                        </tr>
+                        <tr v-for="record in activityRecords"
+                            v-bind:class="[{'painting':paint,'drawing':draw,'sketching':sketch}]">
+                            <td>{{record.date | shortDate}}</td>
+                            <td>{{record.hours | formatHours}}</td>
+                            <td>{{record.type}}</td>
+                            <td>{{record.medium}}</td>
+                            <td>{{record.complete}}</td>
+                            <td>{{record.notes | shortNote}}</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <h2 class="card-header">Summary</h2>
+
+            <div class="card-body">
+
+                <!-- computed property to calculate the total hours -->
+                <p>You have practiced a total of {{totalHours}} hours</p>
+
+                <!-- Challenge question! Display a list of the total hours for each type.  -->
+                <div id="record-summary" v-show="activityRecords.length > 0">
+                    <p>Hours spent practicing per activity:</p>
+                    <p>{{recSum}}</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+    let app = new Vue({
+        el: '#app',
+        data: {
+            //filled out and connected in html with v-model
+            activity: 'Practice Art',
+
+            //v-model form data
+            //date input is always a string, there is a date object in javascript
+            dateString: '',
+            hours: '',
+            type: '',
+            medium: '',
+            complete: false,
+            completeStr: '',
+            notes: '',
+
+            //record of activities from data entered
+            activityRecords: [],
+
+            //allows users to pick type practiced
+            types: ['Sketching','Drawing','Painting'],
+            //radio button text labels
+            media: {
+                traditional: 'Traditional',
+                digital: 'Digital'
+            },
+            errors: [],
+            draw: false,
+            paint: false,
+            sketch: false
+        },
+        filters: {
+            lowerCase(text) {
+                return text.toLowerCase()
+            },
+            //get date to show correct timezone date without misc wording
+            shortDate(date) {
+                return new Intl.DateTimeFormat('en-US',{timeZone: 'UTC'}).format(date)
+            },
+            formatHours(hours){
+                return Number(hours).toFixed(2)
+            },
+            shortNote(notes){
+                if(notes.length <=40){
+                    return notes
+               } else {
+                    return notes.slice(0,40) + '...'
+                }
+            }
+        },
+        methods:{
+            submit() {
+
+                this.errors = []
+
+                let date = new Date(this.dateString)
+
+                if (!this.dateString || this.dateString == 'Invalid Date' || date > new Date()){
+                    this.errors.push('Please enter a valid date')
+                }
+                if (!this.hours || this.hours > 24 || this.hours <= 0){
+                    this.errors.push('Please enter hours practiced')
+                }
+                if (!this.type){
+                    this.errors.push('Please select what activity you practiced')
+                }
+                if (!this.medium){
+                    this.errors.push('Please select a medium')
+                }
+
+                if (this.errors.length == 0){
+                    let record = {
+                        date: date,
+                        hours: this.hours,
+                        type: this.type,
+                        medium: this.medium,
+                        complete: this.complete ? 'In progress' : 'Complete',
+                        notes: this.notes,
+
+                    }
+                    if (record.type == 'Drawing'){
+                        this.draw = true
+                        this.paint = false
+                        this.sketch = false
+                    } if (record.type == 'Painting'){
+                        this.paint = true
+                        this.draw = false
+                        this.sketch = false
+                    } if (record.type == 'Sketching') {
+                        this.sketch = true
+                        this.draw = false
+                        this.paint = false
+                    }
+                    this.activityRecords.push(record)
+                    this.activityRecords.sort(function (r1,r2){
+                        return r1.date.getTime() - r2.date.getTime() ? 1:-1
+                    })
+
+                    }
+                }
+            },
+        computed: {
+            totalHours: function() {
+                let total = 0
+                this.activityRecords.forEach(record =>{
+                    total = total + record.hours
+                })
+                return total
+
+                },
+            totalRecords: function () {
+                if (this.activityRecords.length == 1) {
+                     return '1 Record'
+                } else {
+                    return this.activityRecords.length + ' Records'
+                }
+            },
+            recSum: function (){
+                this.types.forEach(activity => {
+                    let numTotal = 0
+                    this.activityRecords.forEach(rec =>{
+                        if (activity === rec.type){
+                            numTotal = numTotal + rec.hours
+                        }
+                    })
+                    return activity + ' ' + numTotal + ' hours'
+                })
+            }
+        }
+    })
+
+    </script>
+
+</body>
+
+</html>

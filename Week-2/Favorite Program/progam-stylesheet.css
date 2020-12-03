@@ -1,0 +1,27 @@
+.jumbotron{
+    background-image: url("images/Python-Logo-PNG-Image-180x180.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: black;
+    color: lawngreen;
+    text-align: center;
+    font-family: 'Ubuntu';
+}
+
+body{
+    background-color: #272626;
+}
+
+#code-sample{
+    color: lawngreen;
+
+}
+
+#code-desc{
+    color: lawngreen;
+}
+
+#prog-img{
+    border: black solid 2px;
+    border-radius: 15px;
+}

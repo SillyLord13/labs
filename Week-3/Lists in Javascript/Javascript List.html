@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lists with Javascript</title>
+</head>
+<body>
+
+    <p>Enter some text to add to the list</p>
+    <input id="new-text" type="text">
+    <button id="add-text">Add</button>
+    <button id="clear-button">Clear</button>
+
+    <ul id="list-of-text">
+<!--        empty list where the entered text will go-->
+    </ul>
+
+<script>
+
+    let textInput = document.querySelector('#new-text')
+    let addbutton = document.querySelector('#add-text')
+    let textlist = document.querySelector('#list-of-text')
+    let clearButton = document.querySelector('#clear-button')
+
+    let counter = 0
+
+    addbutton.addEventListener('click', function(){
+
+        counter = counter + 1
+
+        if (counter <= 10) {
+            // get text from input
+            let newText = textInput.value
+
+            // only accept input which exists and is has 50 or less characters
+            if (newText.length > 0 && newText.length <= 50){
+                // create new li element from ul
+                let newListItem = document.createElement('li')
+
+                //add the newly created li element to unordered list
+                newListItem.innerHTML = newText
+                textlist.appendChild(newListItem)
+
+                // clear li element
+                textInput.value = ''
+            } else {
+                // display error if character count is exceeded
+                alert('Input must be less than 50 characters long')
+            }
+        } else {
+            alert('list limited to only 10 lines')
+        }
+    })
+
+    // erase list when clicked
+    clearButton.addEventListener('click', function (){
+        textlist.innerHTML = ''
+        counter = 0
+    })
+
+
+
+</script>
+
+</body>
+</html>

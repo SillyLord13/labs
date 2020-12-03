@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Conference-stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+
+    <div class="jumbotron">
+        <h1>Registration form 2020 Occultism Research </h1>
+        <h1>and Implementation Conference- Upper Midwest Division</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+            <div class="ml-5 mr-3">
+                <div class="header">
+                    <img src="images/cross.png" width="102" height="102">
+                    <h4>Welcome to the 139th Annual Occultism Research and Implementation Conference!</h4>
+                </div>
+                <p id="reg-desc">We are pleased to be witnessing major strides in our global conversion efforts this year. Many of you have
+                been tirelessly working around the clock to bring about each sects special and unique cataclysmic witnessing
+                event! In response to last year's enthusiastic feedback concerning changing our conference registration procedures,
+                we are proud to share our electronic registration form! Of course, we are sad to see our contract with
+                The Mournful Ecclesiastic Monks of the Tongueless Beast end and we wish them the best in their endeavours .</p>
+
+
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <form class="mx-3">
+                <label for="name">Prefered Name:</label><input id="name" class="form-control" name="name" type="text" maxlength="70" required><br>
+                <label for="password">Password:</label><input id="password" class="form-control" name="password" type="password" required><br>
+                <label for="email">Email:</label><input id="email" class="form-control" name="email" type="email" required><br>
+
+                <p class="form-text">Size for complimentary Ominous Hooded Robe:</p>
+                <select required>
+                    <option name="robe-size">Unworthy Worm</option>
+                    <option name="robe-size">Embraced Apprentice</option>
+                    <option name="robe-size">Standard Acolyte</option>
+                    <option name="robe-size">Unseeing Enlightened Host</option>
+                    <option name="robe-size">Head of Ceremonies</option>
+                    <option name="robe-size">Unknowable Horror from beyond Time and Space</option>
+                </select>
+                <br>
+                <label for="birthDate">Date of Birth:</label><input id="birthDate" class="form-control" name="birthDate" type="date" required><br>
+                <label for="yearsActive">How many years have you been apart of your group?</label><br>
+                <input id="yearsActive" name="yearsActive" class="form-control" type="number" value="1" required><br>
+                <label>Cult Sect:</label><input class="form-control" type="text">
+                <p class="form-text">Please select your blood sworn deity</p>
+                <select>
+                    <option name="deity">The Crawling Chaos</option>
+                    <option name="deity">z̥͌ã͍͖̱́͑̚͢l͓̓ģ͓̞͍͉͑̌́̽͛ǒ̱</option>
+                    <option name="deity">Leviathan</option>
+                    <option name="deity">Garfield</option>
+                    <option name="deity">Nya'hotep</option>
+                    <option name="deity">Oglogoth</option>
+                    <option name="deity">The Dread Wolf</option>
+                    <option name="deity">The Invisible Hand of Capitalism</option>
+                    <option name="deity">Other</option>
+                </select>
+
+                <p class="form-text">Would you like to receive advertisements or forbidden knowledge from this year's sponsors?</p>
+                <div class="form-check">
+                    <input name="receiveInfo" id="yes" class="form-check-input" type="radio" checked>
+                    <label for="yes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input name="receiveInfo" id="no" class="form-check-input" type="radio">
+                    <label for="no">No</label>
+                </div>
+
+                <p class="form-text">Which conference session(s) do you wish to attend?</p>
+                <label for="morningAttendance">Morning</label><input id="morningAttendance" name="timeCheck" type="checkbox">
+                <label for="afternoonAttendance">Afternoon</label><input id="afternoonAttendance" name="timeCheck" type="checkbox">
+                <label for="midnightAttendance">Midnight</label><input id="midnightAttendance" name="timeCheck" type="checkbox">
+
+                <p class="form-text">Please provide any additional needs (e.i. allergies, mandatory sacrifices, dietary restrictions, etc...)</p>
+                <textarea rows="7" cols="70"></textarea>
+                <br>
+                <input class="btn btn-primary mt-3" type="submit">
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

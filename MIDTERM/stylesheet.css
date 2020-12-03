@@ -1,0 +1,11 @@
+#form-container{
+    padding: 10px;
+    border: solid black 3px;
+    border-radius: 5%;
+
+}
+
+#header{
+    text-align: center;
+    border-bottom: solid 3px black;
+}

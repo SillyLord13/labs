@@ -1,0 +1,16 @@
+#bridge-map {
+    width: 720px;
+    height: 720px;
+    border: 1px solid black;
+    align-content: center;
+}
+
+body {
+    background: white;
+}
+
+.jumbotron{
+    background-color: cadetblue;
+    text-align: center;
+    text-shadow: dimgray;
+}

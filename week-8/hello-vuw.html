@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Hello Vue!</h1>
+<!--        vue will display a message here-->
+        <p>{{message | uppercase}}</p>
+
+        <p>this class is {{className}}-{{classCode}}</p>
+
+        <button v-on:click="addExclamation">Add !</button>
+        <button v-on:click="clrMessage">Clear</button>
+    </div>
+
+    <script>
+        // vue model which contains data -> message that will display
+        let app = new Vue({
+            //calling the div with our app id
+            el: '#app',
+            data: {
+                message: 'Welcome!',
+                className: 'Web client Server',
+                classCode: 2560,
+                exclCounter: 1
+            },
+            // reactive, as the data is changed on the client side so is the page
+            methods: {
+                //originally put a while loop, but that doesn't work because it slams all ! on one click, not across multiple clicks
+                addExclamation: function (){
+                    // all variables are local only, so if you want to refer to an earlier variable you need 'This.whatever'
+                    if (this.exclCounter < 10){
+                        this.message = this.message + '!'
+                        this.exclCounter++
+                    } else {
+                        alert('No more ! nya!')
+                    }
+                },
+                clrMessage: function (){
+                    this.message = 'welcome!'
+                    this.exclCounter = 1
+                }
+            },
+            // note, the spelling MUST BE EXACT
+            filters: {
+                uppercase: function (string){
+                    return string.toUpperCase()
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

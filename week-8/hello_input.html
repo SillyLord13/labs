@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello vue input</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h1>Hello Vue!</h1>
+
+    <label for="name">Please enter your name</label>
+<!--    stores and connects html input and vue variable directly-->
+    <input v-model="name" id="name">
+
+<!--will only appear when name is input-->
+    <div v-if="name">
+        <p>Thank you, {{name | correct}}</p>
+
+        <button v-on:click="clear">Clear input</button>
+        <button v-on:click="uppercase">Upper case</button>
+
+    </div>
+    <div  v-else>
+        <p>waiting....</p>
+    </div>
+
+</div>
+
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            name: ''
+        },
+        methods:{
+            clear: function (){
+                this.name = ''
+            },
+            uppercase: function (){
+                this.name = this.name.toUpperCase()
+            }
+        },
+        filters: {
+            correct: function (string){
+                return string.charAt(0).toUpperCase()+string.slice(1)
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

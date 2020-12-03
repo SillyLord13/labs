@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Postcard Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script async defer src="postcard_generator.js"></script>
+</head>
+<body>
+
+<!--MAIN-->
+<div id="header">
+    <h2>Midterm ePostcard generator</h2>
+    <br>
+    <h3>Enter your information and who you would like to send a nice postcard to</h3>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <form class="ml-3 mt-5" id="info-form">
+            <div id="form-container">
+                <label for="from-name">From:</label><input id="from-name" class="form-control" name="from-name" type="text" maxlength="50" >
+                <br>
+                <label for="rec-name">To (name):</label><input id="rec-name" class="form-control" name="to-name" type="text" maxlength="50">
+                <br>
+                <label for="rec-email">Email:</label><input id="rec-email" class="form-control" name="email" type="email" >
+                <br>
+                <p>Enter your message below. Limit 50 characters</p>
+                <p>Message:</p>
+                <textarea id="message" rows="3" cols="52" maxlength="50"></textarea>
+                <br>
+                <button id="create-btn" type="button" class="btn btn-primary">Create Postcard</button>
+                <button id="send-btn" type="button" class="btn btn-success">Send</button>
+                <button id="erase-btn" type="button" class="btn btn-danger">Erase</button>
+            </div>
+        </form>
+
+    </div>
+
+<!--        MAIN CARD-->
+    <div class="col-md-6">
+        <div class="ml-5 mt-5 mr-3" >
+            <div id="card-complete" height="500" width="800">
+                <img id="img"><canvas id="info-card" height="500" width="400"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
